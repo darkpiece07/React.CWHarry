@@ -5,11 +5,10 @@ import TextForm from './components.js/TextForm';
 function App() {
   return (
     <>
-      <Navbar title="My title" about="About me"/>
+      <Navbar title="myTextApp" about="About"/>
       <div className="container">
           <TextForm heading="Enter the text to analyze"/>
       </div>
-      
     </>
   );
 }
