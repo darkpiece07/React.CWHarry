@@ -15,6 +15,18 @@ const handleLoClick = (event) => {
   const newText = text.toLowerCase();
   setText(newText)
 }
+const handleClearClick = (event) => {
+  const newText = "";
+  setText(newText);
+}
+const handleCapitalizedCase = (event) => {
+  const newText = function() {
+    for(let i=1; i<text.length; i++) {
+      if(text.charAt(i-1)===' ') text.charAt(i).toUpperCase();
+    }
+  }
+  setText(newText);
+}
 
   return (
   <>
@@ -23,8 +35,10 @@ const handleLoClick = (event) => {
       <textarea value={text} onChange={handleOnChange} className="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
     </div>
     <div className='container my-3'>
-          <button className="btn btn-primary mx-1" onClick={handleUpClick}>convert to uppercase</button>
-          <button className="btn btn-primary" onClick={handleLoClick}>convert to lowercase</button>
+          <button className="btn btn-primary mx-1" onClick={handleUpClick}>UPPER CASE</button>
+          <button className="btn btn-primary mx-1" onClick={handleLoClick}>lower case</button>
+          <button className="btn btn-primary mx-1" onClick={handleClearClick}>clear</button>
+          <button className="btn btn-primary mx-1" onClick={handleCapitalizedCase}>Capitalized Case</button>
     </div>
     <div className="container">
       <h2>The word and character counts that you entered</h2>
